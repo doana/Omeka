@@ -13,6 +13,7 @@ echo flash();
 <form method="post">
 <section class="seven columns alpha">
     <p class='explanation'>* <?php echo __('required field'); ?></p>
+    <?php fire_plugin_hook('admin_users_form', array('user' => $user, 'form' => $form, 'view' => $this)); ?>
     <?php echo $this->form; ?>
 </section>
 <section class="three columns omega">
@@ -31,6 +32,5 @@ echo flash();
     </div>
 </section>
 </form>
-<?php fire_plugin_hook('admin_users_form', array('user' => $user, 'form' => $form, 'view' => $this)); ?>
 
 <?php echo foot();?>
